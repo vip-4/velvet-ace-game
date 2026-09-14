@@ -34,6 +34,7 @@
     bet: 0,
     spinning: false,
     grid: [],
+    spins: 0,
   };
 
   const els = {
