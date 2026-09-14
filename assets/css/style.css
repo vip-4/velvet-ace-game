@@ -357,6 +357,7 @@ footer.site a:hover{color:var(--gilt)}
 
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s cubic-bezier(0.16,1,0.3,1)}
+.geo-strip.reveal{opacity:1;transform:none}
 .reveal.in{opacity:1;transform:none}
 
 /* ---------- responsive ---------- */
