@@ -2,6 +2,8 @@ User-agent: *
 Allow: /
 Allow: /game.html
 Allow: /slot.html
+Allow: /roulette.html
+Allow: /baccarat.html
 Disallow: /assets/
 Crawl-delay: 1
 
