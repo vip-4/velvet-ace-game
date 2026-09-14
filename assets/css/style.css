@@ -184,7 +184,8 @@ details.faq p{padding:0 22px 20px;color:var(--muted)}
 .table{
   max-width:960px;margin:0 auto;border-radius:26px;padding:clamp(18px,3vw,30px);
   background:
-    radial-gradient(120% 90% at 50% 0%,var(--felt-mid),var(--felt-deep) 70%);
+    radial-gradient(120% 90% at 50% 0%,rgba(22,54,40,0.55),rgba(9,24,17,0.82) 70%),
+    url("../img/table-felt.png") center / cover no-repeat;
   box-shadow:var(--shadow-2),inset 0 1px 0 oklch(1 0 0 / 0.09);
   border:1px solid oklch(0.78 0.115 82 / 0.3);
   position:relative;overflow:hidden;
@@ -214,7 +215,7 @@ details.faq p{padding:0 22px 20px;color:var(--muted)}
 .card .top{display:flex;flex-direction:column;align-items:flex-start}
 .card .suit-lg{font-size:1.5rem;line-height:1;margin-top:auto}
 .card.face-down{
-  background:repeating-linear-gradient(45deg,var(--crimson-deep),var(--crimson-deep) 6px,var(--crimson) 6px 12px);
+  background:url("../img/card-back.png") center / cover no-repeat;
   color:transparent;
 }
 .card.is-bust{opacity:0.55;filter:grayscale(0.7)}
