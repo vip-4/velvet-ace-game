@@ -7,7 +7,7 @@
   "background_color": "#152b20",
   "theme_color": "#20372b",
   "icons": [
-    { "src": "assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ],
   "lang": "zh-CN"
 }
