@@ -1,0 +1,13 @@
+{
+  "name": "Velvet Ace — 21点",
+  "short_name": "Velvet Ace",
+  "description": "轻量网页 21 点 Blackjack 赌场游戏，免费在线玩。",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#152b20",
+  "theme_color": "#20372b",
+  "icons": [
+    { "src": "assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "lang": "zh-CN"
+}
