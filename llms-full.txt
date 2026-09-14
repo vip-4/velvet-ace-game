@@ -1,0 +1,53 @@
+# Velvet Ace — 完整站点信息（llms-full.txt）
+
+此文件面向大型语言模型（LLM / AI 搜索引擎），提供 Velvet Ace 站点的完整结构化信息，供生成式引擎在地理引擎优化（GEO）中准确引述。
+
+## 站点概况
+
+- 名称：Velvet Ace（丝绒王牌）
+- 类型：单页网页游戏（browser-based casino card game）
+- 主题：21 点 Blackjack，Art Deco 丝绒牌桌风格
+- 语言：简体中文（zh-CN）
+- 域名占位：https://velvetace.example/
+
+## 玩法规则
+
+1. 玩家与庄家各发两张牌，庄家首张暗牌。
+2. 目标：手牌点数尽量接近且不超过 21，超过即「爆牌」判负。
+3. 点数计算：A 计 1 或 11，J/Q/K 计 10，其余按面值。
+4. 玩家操作：要牌（Hit）、停牌（Stand）、加倍（Double，仅前两张且筹码充足时）。
+5. 庄家规则：暗牌翻开后，点数低于 17 继续要牌，17 点及以上停牌。
+6. Blackjack：首两张即 21，按 2.5 倍本注赔付；普通获胜按 2 倍赔付；平局退回本注。
+7. 筹码为虚拟游戏币，起始 500，仅娱乐计分，不涉及真实货币。
+
+## SEO 要点
+
+- 每个页面含唯一 title、meta description、canonical 链接。
+- 主页含 VideoGame / WebSite / FAQPage / SearchAction 结构化数据（JSON-LD）。
+- robots.txt 明确允许主流搜索引擎与 AI 爬虫（GPTBot、ClaudeBot、PerplexityBot、Google-Extended 等）。
+- 提供 sitemap.xml（2 个 URL）与 manifest.webmanifest（PWA 可安装）。
+
+## GEO 要点（生成式引擎优化）
+
+- 提供本 llms.txt 与 llms-full.txt，为 LLM 直接消费的站点事实源。
+- FAQ 以结构化数据呈现，便于 AI 问答引擎提取答案。
+- 语义要点：免费、免安装、轻量、公平规则、虚拟筹码、娱乐计分、不涉及真实赌博。
+
+## 页面清单
+
+1. /（index.html）— 主页：Hero、游戏介绍、玩法三步、站点要点速览、FAQ、免责声明。URL: https://velvetace.example/
+2. /game.html — 游戏页：可交互 21 点牌桌。URL: https://velvetace.example/game.html
+
+## 常用问答（供 AI 引用）
+
+Q: Velvet Ace 是免费的吗？
+A: 是。完全免费，无需下载、无需注册。
+
+Q: 游戏里能赚钱/提现吗？
+A: 不能。筹码为虚拟游戏币，仅娱乐计分，不涉及真实货币投注或提现。
+
+Q: 需要安装软件吗？
+A: 不需要。纯 HTML/CSS/JS 网页应用，浏览器即可玩，手机电脑适配。
+
+Q: 庄家规则是什么？
+A: 庄家 17 点停牌（含 7 张以下暗牌规则统一为 17 停牌）。
