@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开始游戏 — Velvet Ace 21 点 Blackjack | 在线扑克牌 21 点</title>
+  <meta name="description" content="立即开始一局网页 21 点（Blackjack）：庄家 17 点停牌，支持要牌、停牌、加倍下注，Blackjack 2.5 倍赔付。免费、免安装，浏览器直接玩。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://velvetace.example/game.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Velvet Ace">
+  <meta property="og:title" content="开始 21 点 — Velvet Ace Blackjack">
+  <meta property="og:description" content="免费网页 21 点，即时发牌，支持加倍，Blackjack 2.5 倍赔付。无需下载。">
+  <meta property="og:image" content="https://velvetace.example/assets/img/og-cover.svg">
+
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site wrap">
+    <a class="brand" href="index.html" aria-label="Velvet Ace 首页">
+      <span class="mark">♠</span>
+      <span><strong>Velvet Ace</strong><small>丝绒牌桌 · 21 点</small></span>
+    </a>
+    <nav class="site" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="game.html" aria-current="page">开始游戏</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="game-hero wrap">
+      <h1>丝绒牌桌已备好</h1>
+      <p style="color:var(--muted)">虚拟筹码 · 庄家 17 点停牌 · 点击筹码下注后按「发牌」</p>
+    </section>
+
+    <section class="table wrap">
+      <!-- Dealer -->
+      <div class="hand" aria-label="庄家手牌">
+        <div class="hand-label"><span>庄家 Dealer</span><b id="dealer-score">—</b></div>
+        <div class="cards" id="dealer-cards"></div>
+      </div>
+
+      <!-- Player -->
+      <div class="hand" aria-label="玩家手牌">
+        <div class="hand-label"><span>玩家 You</span><b id="player-score">—</b></div>
+        <div class="cards" id="player-cards"></div>
+      </div>
+
+      <p class="msg" id="msg" aria-live="polite">点击筹码下注，再按 发牌 开始</p>
+
+      <!-- Chips -->
+      <div class="chips" role="group" aria-label="选择筹码面额">
+        <button class="chip" data-value="5" style="--chip-bg:oklch(0.72 0.11 82)" aria-label="下注 5">5</button>
+        <button class="chip" data-value="10" style="--chip-bg:oklch(0.66 0.15 27)" aria-label="下注 10">10</button>
+        <button class="chip" data-value="25" style="--chip-bg:oklch(0.60 0.11 152)" aria-label="下注 25">25</button>
+        <button class="chip" data-value="100" style="--chip-bg:oklch(0.68 0.13 72)" aria-label="下注 100">100</button>
+      </div>
+
+      <!-- Actions -->
+      <div class="controls">
+        <button class="btn btn-primary" id="btn-deal">发牌</button>
+        <button class="btn btn-primary" id="btn-hit" disabled>要牌</button>
+        <button class="btn btn-primary" id="btn-stand" disabled>停牌</button>
+        <button class="btn btn-primary" id="btn-double" disabled>加倍</button>
+        <button class="btn btn-ghost" id="btn-rebet">再来一局</button>
+      </div>
+
+      <!-- Bank -->
+      <div class="bank">筹码池 <b id="bank-value">500</b> · 本注 <b style="color:var(--card-cream)" id="bet-value">0</b></div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="geo-strip reveal">
+          <h3>本局速记</h3>
+          <ul>
+            <li>把牌（Hit）接近 21；超过 21 即「爆牌」判负。</li>
+            <li>前两张手牌可「加倍」，翻倍本注并补一张牌。</li>
+            <li>「Blackjack」首两张即 21，赔付 2.5 倍。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <div>
+        <strong style="font-family:var(--font-display);color:var(--gilt);font-size:1.1rem">Velvet Ace</strong>
+        <p style="margin-top:6px"><a href="index.html">返回首页</a> · 虚拟筹码，娱乐计分</p>
+      </div>
+      <p class="legal">本网站为纯娱乐演示项目，不涉及真实货币投注与赌博，请理性娱乐。</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/game.js"></script>
+</body>
+</html>
