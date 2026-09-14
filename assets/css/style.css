@@ -253,6 +253,83 @@ details.faq p{padding:0 22px 20px;color:var(--muted)}
 .msg.is-loss{color:var(--danger)}
 .msg.is-win{color:var(--jade)}
 
+/* ---------- slot machine page ---------- */
+.slot-machine{
+  max-width:960px;margin:0 auto;border-radius:26px;padding:clamp(18px,3vw,30px);
+  background:
+    radial-gradient(120% 90% at 50% 0%,rgba(46,28,16,0.6),rgba(20,10,8,0.88) 70%),
+    url("../img/slot-hero.png") center / cover no-repeat;
+  box-shadow:var(--shadow-2),inset 0 1px 0 oklch(1 0 0 / 0.09);
+  border:1px solid oklch(0.78 0.115 82 / 0.3);
+  position:relative;overflow:hidden;
+}
+.slot-machine::before{
+  content:"";position:absolute;inset:10px;border-radius:18px;pointer-events:none;
+  border:1px solid oklch(0.78 0.115 82 / 0.2);
+}
+.slot-cabinet{
+  position:relative;z-index:1;border-radius:18px;padding:18px;
+  background:linear-gradient(170deg,oklch(0.32 0.05 30),oklch(0.20 0.03 25));
+  box-shadow:inset 0 1px 0 oklch(1 0 0 / 0.12),inset 0 -8px 22px oklch(0 0 0 / 0.5);
+}
+.slot-reels{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,2vw,16px);
+  padding:clamp(10px,2vw,16px);
+  background:oklch(0.10 0.01 25);
+  border-radius:12px;
+  box-shadow:inset 0 0 0 2px oklch(0.78 0.115 82 / 0.35),inset 0 6px 18px oklch(0 0 0 / 0.7);
+}
+.reel{
+  height:clamp(198px,34vw,252px);
+  border-radius:10px;overflow:hidden;position:relative;
+  background:linear-gradient(180deg,oklch(0.97 0.02 88),oklch(0.92 0.02 88));
+  box-shadow:inset 0 0 0 1px oklch(0.3 0.02 88 / 0.25),inset 0 0 30px oklch(0.6 0.1 82 / 0.18);
+  display:flex;flex-direction:column;
+}
+.reel::before,.reel::after{
+  content:"";position:absolute;left:0;right:0;height:26%;z-index:3;pointer-events:none;
+  background:linear-gradient(180deg,rgba(16,8,5,0.55),transparent);
+}
+.reel::after{top:auto;bottom:0;background:linear-gradient(0deg,rgba(16,8,5,0.55),transparent)}
+.reel.spinning .cell{
+  animation:reelblur 0.16s linear infinite alternate;
+}
+@keyframes reelblur{from{opacity:0.55}to{opacity:1}}
+.cell{
+  flex:1;display:grid;place-items:center;min-height:0;
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(2rem,6vw,3.4rem);line-height:1;
+  color:var(--ink);
+  background:linear-gradient(180deg,var(--card-cream),var(--card-cream-dim));
+  border-bottom:1px solid oklch(0.3 0.02 88 / 0.18);
+  transition:background 0.3s ease,color 0.3s ease,transform 0.3s ease;
+}
+.cell.is-win{
+  background:linear-gradient(180deg,var(--gilt),var(--brass));
+  color:var(--ink);
+  transform:scale(1.06);
+  box-shadow:0 0 0 3px oklch(0.78 0.115 82 / 0.7);
+  z-index:2;position:relative;
+}
+.sym-7{color:oklch(0.55 0.19 27);-webkit-text-stroke:1px oklch(0.3 0.1 25 / 0.4)}
+.sym-bar{font-size:clamp(0.95rem,2.6vw,1.5rem);letter-spacing:0.08em;color:oklch(0.45 0.1 72)}
+.sym-bell{color:oklch(0.62 0.14 82)}
+.sym-cherry{color:oklch(0.62 0.2 25)}
+.sym-grape{color:oklch(0.52 0.16 305)}
+.sym-lemon{color:oklch(0.72 0.16 95)}
+.sym-diamond{color:oklch(0.68 0.13 200)}
+.paytable{
+  position:relative;z-index:1;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;
+  justify-content:center;align-items:center;color:var(--muted);font-size:0.88rem;
+}
+.paytable .pt-title{width:100%;text-align:center;letter-spacing:0.12em;text-transform:uppercase;font-size:0.74rem;color:var(--gilt)}
+.paytable span{display:inline-flex;align-items:center;gap:6px;background:oklch(0.2 0.02 25 / 0.7);border-radius:999px;padding:5px 12px}
+.paytable .sym{
+  font-family:var(--font-display);font-weight:700;font-size:1.05rem;
+  display:inline-grid;place-items:center;min-width:1.6em;height:1.6em;border-radius:8px;
+  background:var(--card-cream);color:var(--ink);
+}
+
 /* ---------- seo / geo strip ---------- */
 .geo-strip{
   background:var(--felt-mid);border-radius:var(--radius);padding:26px 24px;
