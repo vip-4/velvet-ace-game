@@ -123,7 +123,7 @@
   }
 
   function syncControls() {
-    const locked = state.busy || state.bet === 0 || state.player.length === 0;
+    const locked = !state.busy || state.bet === 0 || state.player.length === 0;
     els.btnHit.disabled = locked;
     els.btnStand.disabled = locked;
     els.btnDouble.disabled = locked || state.player.length !== 2 || state.bank < state.bet;
