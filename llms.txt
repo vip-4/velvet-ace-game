@@ -1,20 +1,26 @@
-# Velvet Ace — 轻量网页 21 点 Blackjack 赌场游戏
+# Velvet Ace — 轻量网页 21 点 &amp; 老虎机 赌场游戏
 
-> Velvet Ace 是一款免费的纯网页 21 点（Blackjack）browser game。Art Deco 丝绒牌桌风格，无需下载、无需注册，浏览器直接游玩。游戏内为虚拟筹码，仅娱乐计分，不涉及真实货币投注。
+> Velvet Ace 是一款免费的纯网页 casino browser game，包含 21 点（Blackjack）与 3×3 老虎机（Slot Machine）两款游戏。Art Deco 丝绒风格，无需下载、无需注册，浏览器直接游玩。游戏内为虚拟筹码，仅娱乐计分，不涉及真实货币投注。
 
 ## 什么是 Velvet Ace
 
-Velvet Ace 是一个单页可玩的网页 21 点游戏：标准规则、庄家 17 点停牌、支持要牌（Hit）/ 停牌（Stand）/ 加倍（Double），首两张即 21 的 Blackjack 按 2.5 倍赔付。全部逻辑运行在浏览器本地，使用 Vanilla JavaScript 实现，轻量快速，桌面与移动端均适配。
+Velvet Ace 是一个单页可玩的网页赌场游戏集：
+- **21 点 Blackjack**：标准规则、庄家 17 点停牌、支持要牌（Hit）/ 停牌（Stand）/ 加倍（Double），首两张即 21 的 Blackjack 按 2.5 倍赔付。
+- **老虎机 Slot Machine**：3×3 转轴、五条赢线（三横两对角）、经典 7 / BAR / 樱桃 / 铃铛 / 葡萄 / 柠檬 / 菱形符号，单线最高 50 倍赔率，多线命中奖金叠加。
+
+全部逻辑运行在浏览器本地，使用 Vanilla JavaScript 实现，轻量快速，桌面与移动端均适配。
 
 ## 页面
 
 - [主页 / 首页](https://velvetace.example/)：游戏介绍、规则说明、FAQ 与免责声明
-- [开始游戏](https://velvetace.example/game.html)：直接游玩 21 点 Blackjack
+- [21 点 Blackjack](https://velvetace.example/game.html)：直接游玩 21 点
+- [老虎机 Slot](https://velvetace.example/slot.html)：直接游玩 3×3 老虎机
 
 ## 技术要点
 
 - 纯静态 HTML/CSS/JavaScript，无框架、无后端依赖
-- 单副牌本地洗牌，公平发牌
+- 21 点单副牌本地洗牌，公平发牌
+- 老虎机加权符号池 + 5 条赢线实时结算
 - OKLCH 色彩体系 + Art Deco 设计语言
 - 支持 prefers-reduced-motion 无障碍适配
 - 虚拟筹码仅作娱乐计分，与真实货币无关
@@ -24,3 +30,4 @@ Velvet Ace 是一个单页可玩的网页 21 点游戏：标准规则、庄家 1
 - [站点地图](https://velvetace.example/sitemap.xml)
 - [Robot 规则](https://velvetace.example/robots.txt)
 - [应用清单](https://velvetace.example/manifest.webmanifest)
+（内容由AI生成，仅供参考）
