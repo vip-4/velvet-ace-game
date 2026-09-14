@@ -133,7 +133,7 @@
         reel.classList.remove("spinning");
         renderReel(reel, strip);
         beep(520 + i * 120, 0.07, "triangle");
-        if (i === 2) finishSpin(strip);
+        if (i === 2) finishSpin(finals);
       }, delays[i]);
     });
   }
