@@ -148,9 +148,11 @@
 
     if (wins.length === 0) {
       state.spinning = false;
+      state.spins++;
       msg("未中奖，再试一次", "is-loss");
       beep(200, 0.16, "sawtooth", 0.04);
       syncControls();
+      persistCloud(false);
       return;
     }
 
@@ -171,9 +173,11 @@
     const total = wins.reduce((s, w) => s + w.payout, 0);
     state.bank += total;
     state.spinning = false;
+    state.spins++;
     msg(`中奖！奖金 ${total} 筹码（${wins.length} 条赢线）`, "is-win");
     setTimeout(() => beep(1040, 0.14, "sine", 0.06), 500);
     syncControls();
+    persistCloud(true, total);
   }
 
   function idxToPos(idx) {
@@ -196,6 +200,27 @@
     els.bank.textContent = state.bank;
     els.bet.textContent = state.bet;
     syncControls();
+  }
+
+  /* ---------- cloud sync (Supabase) ---------- */
+  function persistCloud(won = false) {
+    const bk = window.velvetBackend;
+    if (!bk) return;
+    bk.savePlayer({ chips: state.bank, spins: state.spins, rounds: 0 }).catch(() => {});
+    if (won) bk.submitScore("slot", state.bank).catch(() => {});
+  }
+
+  async function syncFromCloud() {
+    const bk = window.velvetBackend;
+    if (!bk) return;
+    try {
+      const p = await bk.fetchPlayer();
+      if (p && typeof p.chips === "number" && p.chips > 0) {
+        state.bank = p.chips;
+        state.spins = p.spins || 0;
+      }
+      render();
+    } catch (_) { /* offline: keep local defaults */ }
   }
 
   /* ---------- init ---------- */
@@ -223,6 +248,8 @@
 
   msg("点击筹码下注，再按 开转 开始");
   render();
+  syncFromCloud();
+  if (window.velvetBackend) window.velvetBackend.renderLeaderboard("slot", "lb-slot");
 
   window.velvetSlot = { state, spin, evaluate };
 })();
