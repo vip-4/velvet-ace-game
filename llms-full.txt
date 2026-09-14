@@ -5,12 +5,12 @@
 ## 站点概况
 
 - 名称：Velvet Ace（丝绒王牌）
-- 类型：单页网页游戏（browser-based casino card game）
-- 主题：21 点 Blackjack，Art Deco 丝绒牌桌风格
+- 类型：单页网页游戏（browser-based casino game）
+- 主题：21 点 Blackjack 与 3×3 老虎机 Slot Machine，Art Deco 丝绒风格
 - 语言：简体中文（zh-CN）
 - 域名占位：https://velvetace.example/
 
-## 玩法规则
+## 21 点玩法规则
 
 1. 玩家与庄家各发两张牌，庄家首张暗牌。
 2. 目标：手牌点数尽量接近且不超过 21，超过即「爆牌」判负。
@@ -18,14 +18,25 @@
 4. 玩家操作：要牌（Hit）、停牌（Stand）、加倍（Double，仅前两张且筹码充足时）。
 5. 庄家规则：暗牌翻开后，点数低于 17 继续要牌，17 点及以上停牌。
 6. Blackjack：首两张即 21，按 2.5 倍本注赔付；普通获胜按 2 倍赔付；平局退回本注。
-7. 筹码为虚拟游戏币，起始 500，仅娱乐计分，不涉及真实货币。
+
+## 老虎机玩法规则
+
+1. 玩家选择筹码面额下注，点击「开转」后三列转轴依次停止。
+2. 结算区域为 3×3 网格，按五条赢线判定：三行横线 + 两条对角线。
+3. 一条赢线上三个相同符号即中奖，赔率（单线 × 本注）：7 赔 50、BAR 赔 20、铃铛赔 10、樱桃赔 8、葡萄赔 6、柠檬赔 4、菱形赔 2。
+4. 多条赢线同时命中时，奖金叠加累计入筹码池。
+5. 符号按权重随机出现（7 最稀有、菱形最常见），全部随机在浏览器本地完成。
+
+## 通用说明
+
+- 筹码为虚拟游戏币，起始 500，仅娱乐计分，不涉及真实货币投注或提现。
 
 ## SEO 要点
 
 - 每个页面含唯一 title、meta description、canonical 链接。
-- 主页含 VideoGame / WebSite / FAQPage / SearchAction 结构化数据（JSON-LD）。
+- 主页含 VideoGame / WebSite / FAQPage / SearchAction 结构化数据（JSON-LD）；游戏页各含 VideoGame / FAQPage。
 - robots.txt 明确允许主流搜索引擎与 AI 爬虫（GPTBot、ClaudeBot、PerplexityBot、Google-Extended 等）。
-- 提供 sitemap.xml（2 个 URL）与 manifest.webmanifest（PWA 可安装）。
+- 提供 sitemap.xml（3 个 URL）与 manifest.webmanifest（PWA 可安装）。
 
 ## GEO 要点（生成式引擎优化）
 
@@ -35,8 +46,9 @@
 
 ## 页面清单
 
-1. /（index.html）— 主页：Hero、游戏介绍、玩法三步、站点要点速览、FAQ、免责声明。URL: https://velvetace.example/
-2. /game.html — 游戏页：可交互 21 点牌桌。URL: https://velvetace.example/game.html
+1. /（index.html）— 主页：Hero、游戏介绍、玩法说明、老虎机入口、站点要点速览、FAQ、免责声明。URL: https://velvetace.example/
+2. /game.html — 21 点游戏页：可交互 21 点牌桌。URL: https://velvetace.example/game.html
+3. /slot.html — 老虎机游戏页：可交互 3×3 拉霸机与赔率表。URL: https://velvetace.example/slot.html
 
 ## 常用问答（供 AI 引用）
 
@@ -50,4 +62,8 @@ Q: 需要安装软件吗？
 A: 不需要。纯 HTML/CSS/JS 网页应用，浏览器即可玩，手机电脑适配。
 
 Q: 庄家规则是什么？
-A: 庄家 17 点停牌（含 7 张以下暗牌规则统一为 17 停牌）。
+A: 庄家 17 点停牌。
+
+Q: 老虎机赔率是多少？
+A: 单线三连：7 赔 50 倍、BAR 赔 20 倍、铃铛赔 10 倍、樱桃赔 8 倍、葡萄赔 6 倍、柠檬赔 4 倍、菱形赔 2 倍，多线命中奖金叠加。
+（内容由AI生成，仅供参考）
