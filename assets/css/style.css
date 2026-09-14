@@ -369,3 +369,43 @@ footer.site a:hover{color:var(--gilt)}
   *{animation:none!important;transition:none!important;scroll-behavior:auto}
   .reveal{opacity:1;transform:none}
 }
+
+
+/* ---- cloud leaderboard ---- */
+.leaderboard {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.leaderboard li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--card-cream, #f2e8d5) 85%, transparent);
+  font-size: 0.95rem;
+}
+.leaderboard .lb-rank {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--gilt, #c9a227);
+  font-variant-numeric: tabular-nums;
+}
+.leaderboard .lb-name {
+  flex: 1;
+  font-weight: 600;
+}
+.leaderboard .lb-score {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted, #6b6b6b);
+}
+.leaderboard .lb-loading,
+.leaderboard .lb-empty {
+  justify-content: center;
+  color: var(--muted, #6b6b6b);
+  font-style: italic;
+}
