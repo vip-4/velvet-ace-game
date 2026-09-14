@@ -244,6 +244,28 @@
       beep(200, 0.16, "sawtooth", 0.04);
     }
     render();
+    persistCloud(outcome === "win");
+  }
+
+  /* ---------- cloud sync (Supabase) ---------- */
+  function persistCloud(won = false) {
+    const bk = window.velvetBackend;
+    if (!bk) return;
+    bk.savePlayer({ chips: state.bank, spins: 0, rounds: state.round }).catch(() => {});
+    if (won) bk.submitScore("blackjack", state.bank).catch(() => {});
+  }
+
+  async function syncFromCloud() {
+    const bk = window.velvetBackend;
+    if (!bk) return;
+    try {
+      const p = await bk.fetchPlayer();
+      if (p && typeof p.chips === "number" && p.chips > 0) {
+        state.bank = p.chips;
+        if (p.rounds > state.round) state.round = p.rounds;
+      }
+      render();
+    } catch (_) { /* offline: keep local defaults */ }
   }
 
   /* ---------- init ---------- */
@@ -288,6 +310,8 @@
   els.bet.textContent = 0;
   els.playerScore.textContent = "—";
   els.dealerScore.textContent = "—";
+  syncFromCloud();
+  if (window.velvetBackend) window.velvetBackend.renderLeaderboard("blackjack", "lb-blackjack");
 
   // expose for console debugging
   window.velvetAce = { state, hit, stand, double, startRound };
