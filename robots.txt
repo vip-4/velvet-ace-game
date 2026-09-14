@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Allow: /game.html
+Allow: /slot.html
 Disallow: /assets/
 Crawl-delay: 1
 
@@ -42,3 +43,4 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://velvetace.example/sitemap.xml
+（内容由AI生成，仅供参考）
